@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENCANTIA DNS PROPAGATION</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css"/>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ENCANTIA DNS PROPAGATION</h1>
+            <p>Consulta la propagación de tu dominio en todo el mundo.</p>
+        </header>
+        
+        <main>
+            <form id="dnsForm">
+                <input type="text" id="domain" placeholder="Introduce tu dominio" required>
+                <button type="submit">Ver Propagación</button>
+            </form>
+
+            <div id="map" style="height: 500px;"></div>
+
+            <div id="results">
+                <h2>Resultados de Propagación:</h2>
+                <ul id="resultList"></ul>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
