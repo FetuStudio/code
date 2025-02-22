@@ -1,12 +1,10 @@
 $(document).ready(function () {
-    // Inicializar el mapa de Leaflet
-    var map = L.map('map').setView([20, 0], 2); // Vista centrada en el mundo
+    var map = L.map('map').setView([20, 0], 2); 
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    // Función para obtener resultados de propagación DNS
     function fetchDNSPropagation(domain) {
         $.ajax({
             url: 'dnsQuery.php',
@@ -23,7 +21,6 @@ $(document).ready(function () {
         });
     }
 
-    // Mostrar los resultados de la propagación
     function showResults(data) {
         $('#results').show();
         $('#resultList').empty();
@@ -33,7 +30,6 @@ $(document).ready(function () {
         });
     }
 
-    // Actualizar el mapa con las ubicaciones de los servidores DNS
     function updateMap(data) {
         data.forEach(function(result) {
             var statusColor = result.status === 'OK' ? 'green' : 'red';
@@ -44,7 +40,6 @@ $(document).ready(function () {
         });
     }
 
-    // Enviar formulario
     $('#dnsForm').submit(function (event) {
         event.preventDefault();
         var domain = $('#domain').val();
